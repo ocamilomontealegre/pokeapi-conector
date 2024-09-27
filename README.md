@@ -33,16 +33,49 @@
 
 ## 👀 Motivation
 
-When we start creating some new service based on NestJS most often we just use the Nest cli for starting a new service that already give us some convention and structure for our project. This is a good starting point however I was missing a couple of interesting things that almost all services should have to be ready to deploy to production like fully dockerized, ensuring coding conventions...
+A simple RESTful API built with NestJS that interacts with the Pokémon API, providing functionalities to fetch Pokémon data, including their types and translations.
 
-For this reason I created this custom template for new services based on this framework, with everything I would like to have to start developing a service with the best practices but with a simple file structure so later developers can change to implement their logic.
+## Technologies Used
 
-Here we are not providing any specific architecture like hexagonal architecture or others, this is like a simple template where later we can customize and create the architecture we need.
+This project is built using the following frameworks and libraries:
+
+- **NestJS**: A progressive Node.js framework for building efficient, reliable, and scalable server-side applications.
+- **Axios**: A promise-based HTTP client for the browser and Node.js.
+- **Winston**: A logging library for Node.js that allows for flexible logging and transport configurations.
+- **Class-Transformer & Class-Validator**: Libraries for transforming plain JavaScript objects into class instances and validating them.
+- **Swagger**: API documentation framework that integrates with NestJS to create beautiful API documentation automatically.
+
+## Dependencies
+
+The following dependencies are included in the project:
+
+```json
+"dependencies": {
+    "@nestjs/axios": "^3.0.3",
+    "@nestjs/cache-manager": "^2.2.2",
+    "@nestjs/common": "^10.4.1",
+    "@nestjs/config": "^3.2.3",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/platform-express": "^10.0.0",
+    "@nestjs/swagger": "^7.4.0",
+    "@swc/cli": "0.4.1-nightly.20240914",
+    "@swc/core": "^1.7.26",
+    "axios": "^1.7.7",
+    "cache-manager": "^6.1.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "nest-winston": "^1.9.7",
+    "reflect-metadata": "^0.2.0",
+    "rxjs": "^7.8.1",
+    "winston": "^3.14.2",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+```
 
 ## Project setup
 
 ```bash
-pnpm install
+npm install
 ```
 
 ## Compile and run the project

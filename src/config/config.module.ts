@@ -1,9 +1,11 @@
 import { Module, DynamicModule } from "@nestjs/common";
+import { HttpModule } from "@nestjs/axios";
 import { HttpExceptionFilter } from "@common/exception-filters";
 import { HttpLoggerInterceptor } from "@common/interceptors";
 import { APP_FILTER, APP_INTERCEPTOR } from "@nestjs/core";
 
 @Module({
+  imports: [HttpModule.register({ timeout: 5000 })],
   providers: [
     {
       provide: APP_INTERCEPTOR,

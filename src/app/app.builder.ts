@@ -1,5 +1,5 @@
 import { NestFactory } from "@nestjs/core";
-import { ValidationPipe, VersioningType, type INestApplication } from "@nestjs/common";
+import { ValidationPipe, type INestApplication } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { AppModule } from "./app.module";
 import { AppLoggerService } from "@common/logger/app-logger.service";
@@ -33,11 +33,6 @@ export class AppBuilder {
     this._app.enableCors();
 
     this._app.setGlobalPrefix(this._envVariables.apiGlobalPrefix);
-
-    this._app.enableVersioning({
-      type: VersioningType.URI,
-      defaultVersion: this._envVariables.apiVersion,
-    });
 
     this._app.useGlobalPipes(new ValidationPipe());
 
